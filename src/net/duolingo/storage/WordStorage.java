@@ -11,7 +11,7 @@ public class WordStorage {
     Map<String, Set<String>> wordContainer = new HashMap<>();
 
     public void addWord(lastWord){
-        String initial = lastWord.substring(0, 1).toLowerCase();
+        String initial = lastWord.substring(0, 1).toLowerCase().trim(" ");
         Set<String> wordsStartingWithInitial = wordContainer.get(initial);
         if (wordsStartingWithInitial == null) {
             wordsStartingWithInitial = new HashSet<>();
@@ -19,5 +19,13 @@ public class WordStorage {
         }
 
         wordsStartingWithInitial.add(lastWord);
+    }
+
+    public Map<String, Set<String>> getWordContainer() {
+        return wordContainer;
+    }
+
+    public void setWordContainer(Map<String, Set<String>> wordContainer) {
+        this.wordContainer = wordContainer;
     }
 }
