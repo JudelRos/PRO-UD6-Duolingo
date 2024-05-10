@@ -13,6 +13,9 @@ public class Menu {
             -------------------------
                 """;
 
+    /**
+     * The function prints the string MENU so user can interact with it.
+     */
     public void showMenu() {
         System.out.println(MENU);
     }
