@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class WordStorage {
@@ -15,13 +14,15 @@ public class WordStorage {
     public void addWord(String lastWord) {
         String initial = lastWord.substring(0, 1).toLowerCase();
         String wordToInsert = lastWord.trim().toLowerCase();
+
         Set<String> wordsStartingWithInitial = wordContainer.get(initial);
+
         if (wordsStartingWithInitial == null) {
             wordsStartingWithInitial = new HashSet<>();
             wordContainer.put(initial, wordsStartingWithInitial);
-        } else {
-            wordsStartingWithInitial.add(wordToInsert);
         }
+
+        wordsStartingWithInitial.add(wordToInsert);
     }
 
     public void deleteWord(String wordToDelete) {
@@ -59,8 +60,8 @@ public class WordStorage {
         if (wordContainer.isEmpty()) {
             System.out.println("There are still no initials in the dictionary");
         } else {
-            for (int i = 0; i < wordContainer.size(); i++) {
-                System.out.println("The initial " + wordContainer.get(i) + " exists.");
+            for (String initial : wordContainer.keySet()) {
+                System.out.println("The initial " + initial + " exists.");
             }
         }
     }
