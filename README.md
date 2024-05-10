@@ -27,7 +27,7 @@ The word will get its spaces eliminated and its capital letters will be turn int
 
 The user will be able to do actions with those words like deleting them, check if they exist, show the valid initials for all saved words and even show all the initials saved for each capital letter.
 
-![DUOLINGO]((https://raw.githubusercontent.com/JudelRos/PRO-UD6-Cajero/main/assets/Menu_Duolingo.png))
+![DUOLINGO]((https://raw.githubusercontent.com/JudelRos/PRO-UD6-Duolingo/main/assets/Menu_Duolingo.png))
 
 1. **Add word** - The user is asked for a word to introduce into the system, then that said word is put into the wordContainer(TM) and classified by its initial, creating a new set for the initial if there isn't already one.
 
